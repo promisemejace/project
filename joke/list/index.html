@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>首页</title>
+    <link href="../../lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="../../lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/indexCtrl.js"></script>
+    <script src="views/home/home.js"></script>
+    <script src="views/detail/detail.js"></script>
+    <script src="views/setting/setting.js"></script>
+    <script src="views/about/about.js"></script>
+    <script src="views/tabs/tabs.js"></script>
+    <script src="views/tour/tour.js"></script>
+</head>
+<body ng-controller="indexCtrl">
+
+<ion-side-menus>
+
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button class="button button-clear ion-ios-arrow-back"></ion-nav-back-button>
+            <!--<ion-nav-back-button>-->
+            <!--<i class="icon ion-ios-arrow-back"></i>-->
+            <!--</ion-nav-back-button>-->
+        </ion-nav-bar>
+
+        <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-positive">
+            <h1 class="title">我的选项</h1>
+        </ion-header-bar>
+        <ion-content>
+
+                <!---------------------------登录----------------------------->
+            <ion-item class="item item-icon-left"  ng-if="login.out">
+                <i class="icon ion-android-person"></i>登陆
+            </ion-item>
+            <label class="item item-input" ng-if="login.out" >
+                <span class="input-label">用户名</span>
+                <input type="text" placeholder="笑话" ng-model="userL.userName">
+            </label>
+            <label class="item item-input" ng-if="login.out">
+                <span class="input-label">密码</span>
+                <input type="password" placeholder="123456" ng-model="userL.password">
+            </label>
+            <ion-item ng-if="login.out">
+                <div class="button button-full button-calm " ng-click="userLogin(userL.userName,userL.password)">
+                    登陆
+                </div>
+            </ion-item>
+            <span ng-if="login.nameInvalid" class="padding">
+                用户名错误
+            </span>
+            <span ng-if="login.pwInvalid" class="padding">
+                密码错误
+            </span>
+            <ion-item class="item item-thumbnail-left animate bounceInUp" ng-if="login.in" ui-sref="myInfo"  menu-close>
+                <img ng-src="{{user.avatar}}"/><span style="line-height:80px;font-size:24px;font-family:arial, '微软雅黑';color:#1b6d85">{{user.userName}}</span>
+            </ion-item>
+            <ion-item class="item item-icon-left animate bounceInUp" ng-if="login.in" ui-sref="myCollect"  menu-close>
+                <i class="icon ion-android-favorite" ></i>我的收藏
+            </ion-item>
+            <ion-item class="item item-icon-left animate bounceInUp" ng-if="login.in" ui-sref="myFocus" menu-close>
+                <i class="icon ion-person-stalker"></i>我的关注
+            </ion-item>
+            <ion-item class="item item-icon-left animate bounceInUp" ng-if="login.in" ui-sref="setting" ng-click="showSet()" menu-close>
+                <i class="icon ion-gear-a"></i>设置
+            </ion-item>
+            <ion-item class="item item-icon-left animate bounceInUp" ng-if="login.in" ng-click="userLoginOut()" ui-sref="tabs.whatsNew">
+                <i class="icon ion-arrow-return-right"></i>退出
+            </ion-item>
+                <!-------------------------------0000------------------------->
+
+
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>
+
+
+</body>
+</html>

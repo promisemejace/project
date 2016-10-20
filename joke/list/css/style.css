@@ -1,0 +1,19 @@
+/***************** tour ******************/
+#tour-view .slider {
+    height: 100%
+}
+
+#tour-view .slider-slides {
+    text-align: center;
+
+}
+#tour-view .slider-slides img{width:100%;}
+#tour-view .slide-icon {
+    font-size: 20em;
+}
+/******************* home ********************/
+#home .box,#home .box img{width:100%;}
+#home .slider-slide{width:400px;}
+/******************** about  *********************/
+#about .box,#about .box img{width:100%;}
+#about .slider-slide{width:400px;}

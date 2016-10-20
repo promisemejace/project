@@ -1,0 +1,51 @@
+<ion-view view-title="关于我们" class="balanced-bg">
+    <ion-content id="about">
+        <ion-refresher class="ionic-refresher-with-text" on-refresh="refresh()"
+                       pulling-text="下拉刷新" refreshing-text="努力刷新中..." pulling-icon="ion-radio-waves">
+        </ion-refresher>
+
+        <ion-slide-box auto-play="true" slide-interval="2000" does-continue="true">
+            <ion-slide>
+                <div class="box"><img src="images/5.jpg"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><img src="images/6.jpg"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><img src="images/7.jpg"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><img src="images/8.jpg"></div>
+            </ion-slide>
+
+        </ion-slide-box>
+        <div class="list card"  ng-repeat="product in products">
+
+            <div class="item item-avatar item-remove-animate">
+
+                <img src="images/userImg.png">
+                <P>{{product.hashId}}</P>
+                <p>{{product.content}}</p>
+            </div>
+
+            <div class="item item-image">
+                <img src="{{product.url}}">
+            </div>
+            <div class="tabs tabs-icon-top">
+                <a class="tab-item">
+                    <i class=" icon ion-android-favorite" ></i>
+                </a>
+                <a class="tab-item">
+                    <i class=" icon ion-thumbsup icon-left" ></i>
+                </a>
+                <a class="tab-item">
+                    <i class=" icon ion-android-textsms icon-left"></i>
+                </a>
+            </div>
+            <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+        </div>
+
+
+    </ion-content>
+
+</ion-view>

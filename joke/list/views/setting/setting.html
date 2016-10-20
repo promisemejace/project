@@ -1,0 +1,41 @@
+<ion-view view-title="设置" id="tour-view" class="animated bounceInLeft">
+    <ion-nav-bar class="bar-calm themeColor"></ion-nav-bar>
+    <ion-nav-buttons>
+        <div class="button-bar item-button-left item-button-right">
+            <button class="button button-icon button-clear ion-more" menu-toggle="left"></button>
+            <button class="button button-clear" ui-sref="tabs.home">
+                <i class="icon ion-android-home"></i>
+            </button>
+        </div>
+    </ion-nav-buttons>
+    <ion-content>
+        <ul class="list">
+
+            <li class="item item-toggle" >
+                HTML5
+                <label class="toggle toggle-dark" >
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+
+            <div class="list">
+                <div class="item range range-positive">
+                    <i class="icon ion-ios-sunny-outline"></i>
+                    <input type="range" name="volume" min="0" max="100" value="33">
+                    <i class="icon ion-ios-sunny"></i>
+                </div>
+            </div>
+        </ul>
+        <div>
+            <a class="item item-icon-left"  menu-close>
+                <i class="icon ion-wifi"></i>WIFI设置
+            </a>
+            <a class="item item-icon-left"  menu-close>
+                <i class="icon ion-ios-telephone"></i>联系我们123456
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
